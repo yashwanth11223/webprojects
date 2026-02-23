@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 200vh;
+  background: #111;
+  padding-top: 100px;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  transition: all 0.4s ease;
+  z-index: 1000;
+}
+
+.navbar.scrolled {
+  background: linear-gradient(90deg, #0066ff, #00ccff);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.nav-links li a:hover {
+  color: yellow;
+}
+
+/* Underline animation */
+.nav-links li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: yellow;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Active link */
+.nav-links li a.active {
+  color: yellow;
+  font-weight: bold;
+}
+
+.nav-links li a.active::after {
+  width: 100%;
+}
